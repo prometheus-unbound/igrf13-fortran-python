@@ -4,7 +4,7 @@ architecture: .so files are not necessary compatible between MacOS and Linux/Uni
 Also note this was built for use in a Python2 environment, and it is most likely you will
 be using Python3.
 
-Nonetheless, it is included for those having similar hardware. If you have a Intel MacOS and
+Nonetheless, it is included for those having similar hardware. If you have an Intel MacOS and
 will be using Python2, this should work for you. Else, follow instructions on the homepage
 to compile your own .so file.
 
