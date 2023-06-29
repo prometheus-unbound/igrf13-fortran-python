@@ -445,7 +445,9 @@ C
       END
 C
       SUBROUTINE DMDDEC (I,M,X)
-      IMPLICIT DOUBLE PRECISION (A-H,O-Z)
+      INTEGER,INTENT(IN)::I
+      INTEGER,INTENT(IN)::M
+      DOUBLE PRECISION,INTENT(OUT)::X
       DE = I
       EM = M
       IF (I.LT.0) EM = -EM
@@ -454,7 +456,9 @@ C
       END
 C
       SUBROUTINE DDECDM (X,I,M)
-      IMPLICIT DOUBLE PRECISION (A-H,O-Z)
+      DOUBLE PRECISION,INTENT(IN)::X
+      INTEGER,INTENT(OUT)::I
+      INTEGER,INTENT(OUT)::M
       SIG = SIGN(1.1D0,X)
       DR = ABS(X)
       I = INT(DR)
@@ -514,7 +518,16 @@ c     Coefficients at 1995.0 incorrectly rounded (rounded up instead of
 c     to even) included as these are the coefficients published in Excel 
 c     spreadsheet July 2005.
 c
-      implicit double precision (a-h,o-z)
+      integer,intent(in)::isv
+      double precision,intent(in)::date
+      integer,intent(in)::itype
+      double precision,intent(in)::alt
+      double precision,intent(in)::colat
+      double precision,intent(in)::elong
+      double precision,intent(out)::x
+      double precision,intent(out)::y
+      double precision,intent(out)::z
+      double precision,intent(out)::f
       dimension gh(3645),g0(120),g1(120),g2(120),g3(120),g4(120),
      1          g5(120),g6(120),g7(120),g8(120),g9(120),ga(120),
      2          gb(120),gc(120),gd(120),ge(120),gf(120),gg(120),
